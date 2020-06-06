@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spare Parts</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        form {
+            padding-top: 60px;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        button {
+            border: none;
+            color: cornsilk;
+            background-color: rgb(50, 50, 219);
+            cursor: pointer;
+        }
+
+        #btn {
+            margin-left: 205px;
+        }
+
+        fieldset {
+            border-radius: 1em;
+        }
+
+        .user {
+            background-image: url(https://cdn5.vectorstock.com/i/1000x1000/73/39/user-icon-male-person-symbol-profile-avatar-vector-20787339.jpg);
+            background-size: 35px;
+            background-repeat: no-repeat;
+            padding: 8px 10px 5px 40px;
+        }
+
+        .pas {
+            background-image: url(data:image/png;base64,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);
+            background-size: 35px;
+            background-repeat: no-repeat;
+            padding: 10px 10px 2px 40px;
+        }
+
+        #txt {
+            text-align: center;
+        }
+
+        label {
+            display: inline-block;
+            width: 80px;
+            text-align: right;
+
+        }
+    </style>
+</head>
+
+<body style="background-color: cadetblue;">
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-success py-0">
+        <a class="navbar-brand" style="color: darkred; font-family: Ubuntu;" href="#"><strong>Will Love to
+                Buy</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link  text-light" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle  text-light" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Vehicles
+                    </a>
+                    <div class="dropdown-menu" style="background:#57cc57;" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item text-light" href="honda.html">Honda</a>
+                        <a class="dropdown-item text-light" href="toyota.html">Toyota</a>
+                        <a class="dropdown-item text-light" href="suzuki.html">Suzuki</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  text-light" href="blog.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  text-light" href="aboutus.html">About US</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  text-light" href="contactus.html">Contact Us</a>
+                </li>
+            </ul>
+            <span class="navbar-text">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link  text-light" href="signup.html">Sign Up<span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text-light" href="signin.html">Login</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-user-circle-o fa-2x pt-1 aria-hidden=" true"></i>
+                    </li>
+                </ul>
+            </span>
+        </div>
+    </nav>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 text-center text-success" style="font-style:oblique; background-color: brown; font-size: x-large;">
+                <strong>~ Login ~</strong>
+            </div>
+        </div>
+    </div>
+
+
+    <form action="" method="POST" style="text-align: center;">
+        <fieldset>
+            <!-- <legend><strong>Login</strong></legend> -->
+            <div id="txt">
+                <label for="">Email</label>
+                <input type="text" class="user" placeholder="Email"> <br>
+                <label for="">Password</label>
+                <input type="password" class="pas" placeholder="Password"> <br>
+            </div>
+            <div id="btn">
+                <button>login</button>
+            </div>
+        </fieldset>
+    </form>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
